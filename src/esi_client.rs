@@ -146,7 +146,7 @@ impl Client {
             Some(s) => s,
             None => return Ok(query),
         };
-        
+
         let auth_token_ref = self.auth_tokens[refresh_token].clone();
         let auth_token = auth_token_ref.lock().unwrap(); // Read Only
         if !auth_token.expired() {
@@ -220,7 +220,7 @@ impl Client {
                 .send()
             );
         }
-        
+
         let mut parse_futures = FuturesUnordered::new();
         let mut greatest_expires_in: u64 = 0;
         while let Some(rep) = req_futures
