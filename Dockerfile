@@ -8,7 +8,7 @@ RUN apt update
 RUN apt install protobuf-compiler -y
 RUN cargo build --release
 
-FROM folvlad/alpine-glibc:alpine-3.17
+FROM frolvlad/alpine-glibc:alpine-3.17
 WORKDIR /root/
 COPY --from=0 /root/weve_market/target/release/weve_market bin
 RUN chmod +x ./bin
