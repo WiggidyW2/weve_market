@@ -11,5 +11,6 @@ RUN cargo build --release
 FROM frolvlad/alpine-glibc:alpine-3.17
 WORKDIR /root/
 COPY --from=0 /root/weve_market/target/release/weve_market bin
+RUN apk add openssl1.1-compat
 RUN chmod +x ./bin
 CMD ["./bin"]
