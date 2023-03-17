@@ -6,16 +6,16 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-prost = { version = "0.11.8" }
-tonic = { version = "0.8.3" }
 tokio = { version = "1.26.0", features = ["macros", "rt-multi-thread", "sync"] }
-futures = { version = "0.3.26" }
 reqwest = { version = "0.11.14", features = ["json", "blocking"] }
-serde_json = { version = "1.0" } # 1.0.94
 serde = { version = "1.0", features = ["derive"] } # 1.0.152
-base64 = { version = "0.20.0" }
-either = { version = "1.8.1" }
+futures = { version = "0.3.26" }
+serde_json = { version = "1.0" } # 1.0.94
 chrono = { version = "0.4.23" }
+base64 = { version = "0.20.0" }
+prost = { version = "0.11.8" }
+either = { version = "1.8.1" }
+tonic = { version = "0.8.3" }
 
 [build-dependencies]
 tonic-build = { version = "0.8.3" }
